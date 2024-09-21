@@ -27,7 +27,7 @@ class Matrix:
             del self.elements[(row, col)]
 
     def add(self, other):
-        if self.Rows != other.numRows or self.numCols != other.numCols:
+        if self.Rows != other.Rows or self.Cols != other.Cols:
             raise ValueError("Matrix dimensions must match for addition.")
         result = Matrix(self.Rows, self.Cols)
         for key in set(self.elements.keys()).union(other.elements.keys()):
